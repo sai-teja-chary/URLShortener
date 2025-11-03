@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Home - URLHub</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    <div class="container edit-container">
+        <h1>Short your URL</h1>
+        <form id="form" action="/edit/<%= id %>" method="post">
+            <% if(errors && errors.length> 0) { %>
+                    <% errors.forEach((error)=> { %>
+                        <p class="flash-error">
+                            <%= error %>
+                        </p>
+                        <% }) %> <% } %>
+            <div class="input">
+                <label for="url">Enter URL *</label>
+                <input type="url" name="url" id="url" value="<%= url %>">
+            </div>
+            <div class="input">
+                <label for="shortCode">Enter keyword *</label>
+                <input type="text" name="shortCode" id="shortCode" value="<%= shortCode %>">
+            </div>
+            <button id="primary-btn">Update</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

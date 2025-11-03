@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home - URLHub</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <div class="container">
+            <h1>Profile</h1>
+            <div class="profile">
+                <div class="display-pic">
+                    <p>
+                        <%= user.name[0].toUpperCase() %>
+                    </p>
+                </div>
+                <div class="profile-details">
+                    <p class="profile-name"><%= user.name %></p>
+                    <p class="profile-email"><%= user.email %></p>
+                    <div class="profile-email-verify">
+                        <% if(user.isEmailVerified) { %>
+                        <p class="profile-verify" style="color: green">Verified</p>
+                        <% }else{ %>
+                        <p class="profile-verify" style="color: red">Not Verified</p>
+                        <a class="profile-verify email-verify-btn" href="/verify-email">Verify email</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="settings">
+                <a class="settings-btn" href="/edit-profile">Change Username</a>
+                <a class="settings-btn" href="/change-password">Change Password</a>
+                <a class="settings-btn" href="/delete-account">Delete Account</a>
+            </div>
+           
+        </div>
+
+
+</body>
+
+</html>

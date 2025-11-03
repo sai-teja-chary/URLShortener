@@ -1,0 +1,38 @@
+{
+  "name": "urlshortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.16.2",
+    "argon2": "^0.44.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.2",
+    "drizzle-orm": "^0.44.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mjml": "^4.16.1",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.2",
+    "mysql2": "^3.15.1",
+    "nodemailer": "^7.0.9",
+    "request-ip": "^3.3.0",
+    "resend": "^6.1.2",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "drizzle-kit": "^0.31.5",
+    "prisma": "^6.16.2"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home - URLHub</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <div class="container">
+            <h1>Email Verification</h1>
+            <form class="verify-email-box" action="/send-verification-link" method="post">
+                <p>Your email &lt;<%- email %>&gt; has not been verified yet. Please verify your email by
+                        entering the 8-digit code or request a new verification link.</p>
+                <button class="verify-email-btn" type="submit">Send Verification Link</button>
+            </form>
+
+            <form class="verify-email-box" action="/verify-email-token" method="get">
+                <label for="token">Enter 8 - digit code</label>
+                <input class="verify-email-code" name="token" type="text" placeholder="Enter code">
+                <button class="verify-email-btn" type="submit">Verify</button>
+            </form>
+
+
+        </div>
+
+
+</body>
+
+</html>

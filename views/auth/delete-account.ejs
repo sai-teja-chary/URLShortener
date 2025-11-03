@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home - URLHub</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <div class="container">
+            <h1>Delete Account</h1>
+            <form class="verify-email-box" action="/delete-account" method="post">
+                <p>Enter your email below to delete your account</p>
+                <input class="verify-email-code" type="text" name="name" placeholder="Enter email to delete">
+                <button class="verify-email-btn" type="submit">Delete</button>
+            </form>
+        </div>
+
+
+</body>
+
+</html>

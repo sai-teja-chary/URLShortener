@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register - URLHub</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <div class="container">
+            <h1>Sign up</h1>
+            <form id="form" action="/register" method="post">
+                <% if(errors && errors.length> 0) { %>
+                    <% errors.forEach((error)=> { %>
+                        <p class="flash-error">
+                            <%= error %>
+                        </p>
+                        <% }) %> <% } %>
+                <div class="input">
+                    <label for="username">Name</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your name" required>
+                </div>
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button id="primary-btn">Sign up</button>
+            </form>
+            <div class="secondary-section">
+                <p>or</p>
+                <a href="/login"><button id="primary-btn">Login</button></a>
+            </div>
+
+        </div>
+</body>
+
+</html>

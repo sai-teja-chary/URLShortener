@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home - URLHub</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <div class="container">
+            <h1>Edit Profile</h1>
+            <form class="verify-email-box" action="/edit-profile" method="post">
+                <% if(errors && errors.length> 0) { %>
+                    <% errors.forEach((error)=> { %>
+                        <p class="flash-error">
+                            <%= error %>
+                        </p>
+                        <% }) %>
+
+                <% }else if(success && success.length> 0) { %>
+                    <% success.forEach((message)=> { %>
+                        <p class="flash-notify">
+                            <%= message %>
+                        </p>
+                <% }) %> <% }%>
+                <input class="verify-email-code" type="text" name="name" value="<%= name %>">
+                <button class="verify-email-btn" type="submit">Update</button>
+            </form>
+        </div>
+
+
+</body>
+
+</html>

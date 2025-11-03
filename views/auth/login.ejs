@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login - URLHub</title>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <div class="container">
+            <h1>Login to short your links </h1>
+            <form id="form" action="/login" method="post">
+                <% if(errors && errors.length> 0) { %>
+                    <% errors.forEach((error)=> { %>
+                        <p class="flash-error">
+                            <%= error %>
+                        </p>
+                        <% }) %>
+
+                <% }else if(notify && notify.length> 0) { %>
+                    <% notify.forEach((message)=> { %>
+                        <p class="flash-notify">
+                            <%= message %>
+                        </p>
+                <% }) %> <% }%>
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email"
+                        required>
+                </div>
+                <div class="input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password"
+                        placeholder="Enter your password" required>
+                </div>
+                <button id="primary-btn">Login</button>
+            </form>
+            <div class="secondary-section">
+                <p>or</p>
+                <a href="/register"><button id="primary-btn">Sign up</button></a>
+            </div>
+
+        </div>
+</body>
+
+</html>

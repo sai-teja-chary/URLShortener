@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home - URLHub</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <div class="container">
+            <h1>Short your URL</h1>
+            <form id="form" action="/" method="post">
+                <% if(errors && errors.length> 0) { %>
+                    <% errors.forEach((error)=> { %>
+                        <p class="flash-error">
+                            <%= error %>
+                        </p>
+                        <% }) %>
+                            <% } %>
+                                <div class="input">
+                                    <label for="url">Enter URL *</label>
+                                    <input type="url" name="url" id="url" placeholder="Enter your URL here" required>
+                                </div>
+                                <div class="input">
+                                    <label for="shortCode">Enter keyword *</label>
+                                    <input type="text" name="shortCode" id="shortCode"
+                                        placeholder="Enter your keyword here" required>
+                                </div>
+                                <button id="primary-btn">Shorten</button>
+            </form>
+            <div class="url-container">
+                <h2>Your Short URL</h2>
+                <ul id="short-urls">
+                    <% links.map(({shortCode, url, id})=> { %>
+                        <li>
+                            <div class="links">
+                                <a href="<%= shortCode %>" target="_blank">
+                                    <%= host %>/<%= shortCode %>
+                                </a>
+                                <%= url %>
+                            </div>
+                            <div class="link-control-btns">
+                                    <a href="/edit/<%= id %>">
+                                        <img src="pencil.png" alt="edit">
+                                    </a>
+                                    <form action="/delete/<%= id %>" method="post">
+                                        <button class="delete-btn">
+                                            <img src="delete.png" alt="edit">
+                                        </button>
+                                    </form>
+                            </div>
+                        </li>
+
+                        <% }) %>
+
+                </ul>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
