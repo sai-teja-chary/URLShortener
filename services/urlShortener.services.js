@@ -33,8 +33,7 @@ export const updateShortCode = async ({ id, url, shortCode, userId }) => {
     const [updated] = await db
         .update(links)
         .set({ url, shortCode })
-        .where(and(eq(links.id, id), eq(links.userId, userId)))
-        .returning();
+        .where(and(eq(links.id, id), eq(links.userId, userId)));
 
     return updated || null;
 };
@@ -42,8 +41,7 @@ export const updateShortCode = async ({ id, url, shortCode, userId }) => {
 export const deleteShortLinkById = async (id, userId) => {
     const deleted = await db
         .delete(links)
-        .where(and(eq(links.id, id), eq(links.userId, userId)))
-        .returning();
+        .where(and(eq(links.id, id), eq(links.userId, userId)));
 
     return deleted.length > 0;
 };
