@@ -10,7 +10,6 @@ export const saveLinks = async ({ url, shortCode, userId }) => {
     const [newLink] = await db
         .insert(links)
         .values({ shortCode, url, userId })
-        .returning();
 
     return newLink;
 };
