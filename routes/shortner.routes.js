@@ -4,7 +4,7 @@ import { postURLShortener, getShortenerPage,
      redirectShortURL, getEditShortCodePage,
      postEditShortCodePage,
      deleteShortLink
- } from "../../URLShortener/controllers/postshortner.controller.js"
+ } from "../controllers/postshortner.controller.js"
 
 const router = Router();
 
